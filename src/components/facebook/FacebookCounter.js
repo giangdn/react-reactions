@@ -7,10 +7,11 @@ import FacebookCounterReaction from "./FacebookCounterReaction";
 
 export const FacebookCounter = ({
   counters,
-  user,
   important,
   onClick,
   bg,
+  Favo,
+  Favod,
   styleCounter,
   styleName
 }) => {
@@ -38,7 +39,7 @@ export const FacebookCounter = ({
   const names = _.map(counters, "by");
 
   const nameString = [];
-  if (_.includes(names, user)) {
+  if (parseInt(Favod) > 0) {
     nameString.push("Bạn");
   }
   if (important.length) {
@@ -50,7 +51,7 @@ export const FacebookCounter = ({
     }
   }
   if (names.length - nameString.length > 0)
-    nameString.push(`${names.length - nameString.length} người thả cảm xúc`);
+    nameString.push(`${Favo - nameString.length} người thả cảm xúc`);
 
   return (
     <div style={styles.counter} onClick={onClick}>
@@ -73,7 +74,9 @@ FacebookCounter.defaultProps = {
   important: [],
   bg: "#fff",
   styleCounter: {},
-  styleName: {}
+  styleName: {},
+  Favo: 0,
+  Favod: 0
 };
 
 export default FacebookCounter;
