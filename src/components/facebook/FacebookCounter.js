@@ -52,7 +52,9 @@ export const FacebookCounter = ({
     }
   }
   if (parseInt(Favo) - nameString.length > 0)
-    nameString.push(`${parseInt(Favo) - nameString.length} người thả cảm xúc`);
+    nameString.push(
+      `${parseInt(Favo) - nameString.length} người bày tỏ cảm xúc`
+    );
 
   return (
     <div style={styles.counter} onClick={onClick}>
