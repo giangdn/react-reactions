@@ -26,6 +26,14 @@ export const FacebookCounter = ({
     }
   });
 
+  if (typeof styleCounter !== "undefined") {
+    styles.counter = Object.assign(styles.counter, styleCounter);
+  }
+
+  if (typeof styleName !== "undefined") {
+    styles.counter = Object.assign(styles.name, styleName);
+  }
+
   const groups = _.groupBy(counters, "emoji");
   const names = _.map(counters, "by");
 
@@ -44,13 +52,7 @@ export const FacebookCounter = ({
   nameString.push(`${names.length - nameString.length} người khác`);
 
   return (
-    <div
-      style={[
-        styles.counter,
-        typeof styleCounter !== "undefined" ? styleCounter : {}
-      ]}
-      onClick={onClick}
-    >
+    <div style={styles.counter} onClick={onClick}>
       {_.map(_.keys(groups), (reaction, i, reactions) => {
         return (
           <FacebookCounterReaction
@@ -61,11 +63,7 @@ export const FacebookCounter = ({
           />
         );
       })}
-      <div
-        style={[styles.name, typeof styleName !== "undefined" ? styleName : {}]}
-      >
-        {listOfNames(nameString)}
-      </div>
+      <div style={styles.name}>{listOfNames(nameString)}</div>
     </div>
   );
 };
