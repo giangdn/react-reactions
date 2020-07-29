@@ -50,7 +50,7 @@ export const FacebookCounter = ({
     }
   }
   if (names.length - nameString.length > 0)
-    nameString.push(`${names.length - nameString.length} người khác`);
+    nameString.push(`${names.length - nameString.length} người thả cảm xúc`);
 
   return (
     <div style={styles.counter} onClick={onClick}>
