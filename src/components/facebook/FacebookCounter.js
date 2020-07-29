@@ -42,6 +42,7 @@ export const FacebookCounter = ({
   if (parseInt(Favod) > 0) {
     nameString.push("Bạn");
   }
+
   if (important.length) {
     if (_.includes(names, important[0])) {
       nameString.push(important[0]);
@@ -50,8 +51,8 @@ export const FacebookCounter = ({
       nameString.push(important[1]);
     }
   }
-  if (parseInt(Favo) - names.length > 0)
-    nameString.push(`${parseInt(Favo) - names.length} người thả cảm xúc`);
+  if (parseInt(Favo) - nameString.length > 0)
+    nameString.push(`${parseInt(Favo) - nameString.length} người thả cảm xúc`);
 
   return (
     <div style={styles.counter} onClick={onClick}>
