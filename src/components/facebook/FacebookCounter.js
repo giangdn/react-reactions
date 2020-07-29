@@ -11,7 +11,7 @@ export const FacebookCounter = ({
   onClick,
   bg,
   Favo,
-  Favod,
+  Reacted,
   styleCounter,
   styleName
 }) => {
@@ -39,7 +39,7 @@ export const FacebookCounter = ({
   const names = _.map(counters, "by");
 
   const nameString = [];
-  if (parseInt(Favod) > 0) {
+  if (Reacted.length > 0) {
     nameString.push("Bạn");
   }
 
@@ -79,7 +79,7 @@ FacebookCounter.defaultProps = {
   styleCounter: {},
   styleName: {},
   Favo: 0,
-  Favod: 0
+  Reacted: ""
 };
 
 export default FacebookCounter;
