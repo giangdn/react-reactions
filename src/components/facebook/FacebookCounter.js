@@ -31,7 +31,7 @@ export const FacebookCounter = ({
   }
 
   if (typeof styleName !== "undefined") {
-    styles.counter = Object.assign(styles.name, styleName);
+    styles.name = Object.assign(styles.name, styleName);
   }
 
   const groups = _.groupBy(counters, "emoji");
