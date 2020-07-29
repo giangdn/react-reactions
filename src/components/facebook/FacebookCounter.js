@@ -31,7 +31,7 @@ export const FacebookCounter = ({
 
   const nameString = [];
   if (_.includes(names, user)) {
-    nameString.push("You");
+    nameString.push("Bạn");
   }
   if (important.length) {
     if (_.includes(names, important[0])) {
@@ -41,10 +41,16 @@ export const FacebookCounter = ({
       nameString.push(important[1]);
     }
   }
-  nameString.push(`${names.length - nameString.length} others`);
+  nameString.push(`${names.length - nameString.length} người khác`);
 
   return (
-    <div style={[styles.counter, styleCounter]} onClick={onClick}>
+    <div
+      style={[
+        styles.counter,
+        typeof styleCounter !== "undefined" ? styleCounter : {}
+      ]}
+      onClick={onClick}
+    >
       {_.map(_.keys(groups), (reaction, i, reactions) => {
         return (
           <FacebookCounterReaction
@@ -55,7 +61,11 @@ export const FacebookCounter = ({
           />
         );
       })}
-      <div style={[styles.name, styleName]}>{listOfNames(nameString)}</div>
+      <div
+        style={[styles.name, typeof styleName !== "undefined" ? styleName : {}]}
+      >
+        {listOfNames(nameString)}
+      </div>
     </div>
   );
 };
@@ -63,8 +73,8 @@ export const FacebookCounter = ({
 FacebookCounter.defaultProps = {
   important: [],
   bg: "#fff",
-  styleCounter: [],
-  styleName: []
+  styleCounter: {},
+  styleName: {}
 };
 
 export default FacebookCounter;
