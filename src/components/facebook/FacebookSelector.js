@@ -8,6 +8,7 @@ import FacebookSelectorEmoji from "./FacebookSelectorEmoji";
 export const FacebookSelector = ({
   iconSize,
   reactions,
+  labels,
   variant,
   onSelect,
   customIcons,
@@ -43,7 +44,11 @@ export const FacebookSelector = ({
                   ? customIcons.find(variant, reaction)
                   : icons.find(variant, reaction)
               }
-              label={reaction}
+              label={
+                typeof labels[reaction] !== "undefined"
+                  ? labels[reaction]
+                  : reaction
+              }
               onSelect={onSelect}
             />
           </div>
