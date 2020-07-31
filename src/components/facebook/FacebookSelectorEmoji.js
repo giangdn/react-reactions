@@ -41,7 +41,7 @@ export const GithubSelectorEmoji = ({
           transform: "translateX(-50%)",
           transition: "200ms transform cubic-bezier(0.23, 1, 0.32, 1)",
           opacity: "0",
-          whitespace: "nowrap"
+          whiteSpace: "nowrap"
         }
       },
       hover: {
@@ -51,7 +51,7 @@ export const GithubSelectorEmoji = ({
         label: {
           transform: "translateX(-50%) translateY(-10px)",
           opacity: "1",
-          whitespace: "nowrap"
+          whiteSpace: "nowrap"
         }
       }
     },
