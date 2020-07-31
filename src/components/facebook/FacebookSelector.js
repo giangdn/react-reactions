@@ -49,6 +49,7 @@ export const FacebookSelector = ({
                   ? labels[reaction]
                   : reaction
               }
+              reaction={reaction}
               onSelect={onSelect}
             />
           </div>
